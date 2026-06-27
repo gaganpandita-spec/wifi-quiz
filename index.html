@@ -402,19 +402,29 @@
         'Unche parvat wale mandir ka pandit'
       ],
       correct: 2,
-      wrongFeedback: '😂 Bhai seriously?? Itna simple tha! Unche TILE wale mandir ka CHOTA pandit — yaad kar!'
+      wrongFeedbacks: [
+        '😐 Seriously unche pahad ka pandit???? Tu rhne de bhai 💀',
+        '😤 Chota Pandit???? Size shaming???? Ye kya hai',
+        '🎉 Ye hui na baat.. password Durga Ashtami ke baad milega!',
+        '🤔 Parvat uncha ya pandit uncha?? Depression aa gaya 😵'
+      ]
     },
     {
       tag: '🎵 Round 2',
       text: 'Josh hai to hausle hai, ___ Asha hai to Bhosle hai',
       options: [
         'Kuch nhi hai bhai movie nhi dekhta mein',
-        'Sur hai to Bhosle hai, Crickey hai to Bhogale hai',
+        'Surr hai to Bhosle hai, Cricket hai to Bhogale hai',
         'Kapil hai to Dev hai, Kareena hai to Saif hai',
         'Chidiya hai to ghosle hai, Harsha hai to Bhogale hai'
       ],
       correct: 3,
-      wrongFeedback: '🤦 Yaar... CHIDIYA hai to GHOSLE hai, HARSHA hai to BHOGALE hai! Classic tha ye!'
+      wrongFeedbacks: [
+        '💀 Get a life brooooo. 😭',
+        '😬 Harsha Bhogle wants to know your location.... 📍',
+        '🤣 Saif, Saif ke side to Kareena hai! Aage badh',
+        '🎊 Zor zor se bolkr mt bta sbko password!! Seedha bol deta'
+      ]
     },
     {
       tag: '💀 Round 3',
@@ -426,11 +436,16 @@
         'Ritu Martan Dhamdhere'
       ],
       correct: 3,
-      wrongFeedback: '😭 Arre nahi yaar... clearly RITU MARTAN DHAMDHERE hi best combo hai. No contest!'
+      wrongFeedbacks: [
+        '🤢 Chi kya zabardasti ka match hai 😬',
+        '😤 Sab bakwas hai ye siskya viskya 💅',
+        '👑 Kaha raja bhoj kaha gangu teli 😂',
+        '🏆 Dhamdhere for the win...... Always was! 👑'
+      ]
     },
     {
       tag: '🏆 Round 4',
-      text: 'Anshuman ko, ___ ghat pr, roadroller bachane ke baad PWC ne kya inaam diya?',
+      text: '____ Anshuman ko, ___ ghat pr, roadroller bachane ke baad PWC ne kya inaam diya?',
       options: [
         'Award, Girgardhan, Hanuman Title',
         'Padmabhushan, Nashik, Employee of the month',
@@ -438,7 +453,12 @@
         'How dare you judge Anshuman????'
       ],
       correct: 0,
-      wrongFeedback: '💀 Bhai Anshuman ka sacrifice bhool gaya?? AWARD, GIRGARDHAN, HANUMAN TITLE — ye teen cheezein thi!'
+      wrongFeedbacks: [
+        '🦸 Khali Anshuman nhi, Award Anshuman puchne ka tha bhai! 😤',
+        '😂 Employee of the month to sirf roz aane pr milta hai 🏢',
+        '💸 Mere 500 points bhi le ja bhai, kya farak padta hai 😭',
+        '😡 Abhi aakr theek krega tujhe Anshuman — how dare you judge his skills!! 🔥'
+      ]
     },
     {
       tag: '🤝 Round 5',
@@ -450,7 +470,12 @@
         'Haain Haain haaiinn huu huu huu heee hee hee'
       ],
       correct: 2,
-      wrongFeedback: '😂 Option D select kiya kya?? Bhai... MARE HUE Jeetu ka LANGOTIYA yaar hai Bhaandiya. Classic definition!'
+      wrongFeedbacks: [
+        '💀 Dosti ke liye yaar hi maar diya 😭🪦',
+        '🥚 Jeetu goonga hai Bhaandiya nhi — abhi tujhe uble hue ande deta hu 😤',
+        '😎 Ab maza ayega na bhidu!! 🔥',
+        '😂 Hainn really??????? Seriously ye select kiya tune 💀'
+      ]
     }
   ];
 
@@ -548,11 +573,10 @@
     if (isCorrect) {
       score++;
       updatePip(currentQ, 'hit');
-      fb.className = 'feedback';  // no feedback shown on correct
     } else {
       updatePip(currentQ, 'miss');
       fb.className = 'feedback wrong-fb show';
-      fb.innerHTML = `<span>❌</span><span>${q.wrongFeedback}</span>`;
+      fb.innerHTML = `<span>❌</span><span>${q.wrongFeedbacks[selected]}</span>`;
     }
 
     document.getElementById('score-label').textContent = `Score: ${score}`;
